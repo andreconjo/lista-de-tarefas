@@ -31,6 +31,11 @@ const App = () => {
         setList(newList);
     }
 
+    const handleOnDelete = (id: number) => {
+        let newList = [...list].filter(item => item.id !== id);
+        setList(newList);
+    }
+
 
     return (
         <C.Container>
@@ -38,7 +43,9 @@ const App = () => {
                 <C.Header>TODO LIST</C.Header>
                 <AddArea onEnter={handleAddTask}/>
                 {list.map((item, index) => (
-                    <ListItem key={index} item={item} onChange={handleCheckItem}/>
+                    <ListItem key={index} item={item}
+                              onDelete={handleOnDelete}
+                              onChange={handleCheckItem}/>
                 )).reverse()}
             </C.Area>
             <Footer/>
