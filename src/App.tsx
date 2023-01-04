@@ -7,7 +7,6 @@ import {Footer} from "./components/Footer";
 import {format} from 'date-fns'
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 
 const App = () => {
@@ -41,7 +40,7 @@ const App = () => {
     }
 
     const checkIfAllChecked = () => {
-        let allChecked = list.filter(item => !item.done).length === 0;
+        let allChecked = list.filter(item => !item.done).length === 0 && list.length > 0;
         setShowConffeti(allChecked)
         if(allChecked && allowToSave) {
             toast.success("🚀 Congratulations, you win! 🚀", {
