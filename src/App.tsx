@@ -3,6 +3,7 @@ import {useState} from "react";
 import {Item} from "./types/Item";
 import {ListItem} from "./components/ListItem";
 import {AddArea} from "./components/AddArea";
+import {Footer} from "./components/Footer";
 
 const App = () => {
 
@@ -40,6 +41,7 @@ const App = () => {
                     <ListItem key={index} item={item} onChange={handleCheckItem}/>
                 )).reverse()}
             </C.Area>
+            <Footer/>
         </C.Container>
     );
 }
